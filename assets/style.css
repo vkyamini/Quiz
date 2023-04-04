@@ -1,0 +1,75 @@
+body
+{
+background-color:lightyellow;
+text-align: center;
+}
+.startBtn
+{
+    background-color: blueviolet;
+    color:white;
+    border:5px solid black;
+    width:100px;
+    height:50px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px  solid black;
+}
+.startBtn:hover
+{
+    box-shadow: 4px 4px 4px 10px pink;
+}
+
+.main
+{
+background-color: pink;
+}
+
+.class
+{
+    background-color: beige;
+}
+
+.changer
+{
+    width:200px;
+    height:50px;
+    background-color: aqua;
+    font-size: larger;
+    font-family: fantasy;
+    color:blueviolet
+}
+#score
+{
+    color:blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.display
+{   
+    background-color: cadetblue;
+    font-size: 20px;
+    color:brown;
+    width:500px;
+    height:100px;
+    box-shadow:4px 4px 5px lightblue;
+    margin:10px;
+}
+#displayTime
+{
+    font-family: fantasy;
+    font-weight: 200;
+    font-size: large;
+}
+.QuestionsList
+{
+ color:darkblue;
+ font-size:30px;
+}
+
+.display:hover
+{
+    box-shadow:4px 4px 20px pink;
+}
+.changer:hover
+{
+    box-shadow: 5px 5px 20px pink;
+}
