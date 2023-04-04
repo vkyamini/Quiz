@@ -22,7 +22,9 @@ function setTime() { //declaring a function called setTime
  
         if (startTime<0) {
             clearInterval(setTime);
+            questions.textContent = "";
             timeDisplay.textContent = "Game Over"
+
         }
     }, 1000);   
 
