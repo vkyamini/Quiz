@@ -46,7 +46,9 @@ background-color: pink;
 .display
 {   
     background-color: cadetblue;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+   
     color:brown;
     width:500px;
     height:100px;
