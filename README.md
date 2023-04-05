@@ -3,7 +3,7 @@ Link to application on github pages: https://vkyamini.github.io/Quiz/
 
 ## Technologies Used
 * HTML
-*jacascript
+*javascript
 * CSS
 * VS Code
 * Github
