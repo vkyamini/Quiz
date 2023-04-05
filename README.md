@@ -1,9 +1,12 @@
 # Quiz
 Link to application on github pages: https://vkyamini.github.io/Quiz/
 
+## Screenshot
+![Screenshot](/assets/screenshot.png)
+
 ## Technologies Used
 * HTML
-*jacascript
+* Javascript
 * CSS
 * VS Code
 * Github
@@ -15,4 +18,3 @@ A quick Quiz game with questions regarding the universe.
 ## License
 MIT License
 
-##screenshot
