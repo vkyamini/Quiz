@@ -1,18 +1,16 @@
-var startButton = document.querySelector(".startBtn");//creating a start button
+var startButton = document.querySelector(".startBtn");//getting the start button
 var initialsDiv = document.querySelector("#initials");
-var startTime = 50;//time starts from 0
-var timeDisplay = document.querySelector("#displayTime")// a area to display the time
+var startTime = 50;
+var timeDisplay = document.querySelector("#displayTime");
 var container = document.querySelector("#container");
 
 
-startButton.onclick=setTime;// declaring a action to perform on click-when we click start btn setTime function is triggered
-
-
-function setTime() { //declaring a function called setTime
-
+startButton.onclick = function setTime() {
+    startTime = 50;
+    container.textContent = "";
     // display start time
     timeDisplay.textContent = startTime;
-    // show 1st question
+    // start game
     startGame();
 
     // start timer
@@ -32,8 +30,6 @@ function setTime() { //declaring a function called setTime
 
 
 function startGame() {
-    // have to call the start buttom here and give event listener
-
     var scoreDiv = document.querySelector("#score");
     var questions = document.querySelector("#questions");
 
@@ -41,21 +37,22 @@ function startGame() {
     var questionIndex = 0;
     scoreDiv.textContent = "Your score is " + score;
 
-    var allQuestions = ["Biggest Planet in solar system?"," What type of galaxy is most common in the universe?" , " Which planet has the fastest rotation? ","Which constellation represents a hunter and weapons? ","Which astronaut is famous for having written his daughter initials on the moon?"];
+    var allQuestions = ["Biggest Planet in solar system?"," What type of galaxy is most common in the universe?" , " Which planet has the fastest rotation? ","Which constellation represents a hunter and weapons? ","Which astronaut is famous for having written his daughter initials on the moon?","How many earths could fit inside the sun? "];
 
-    var firstOptions = ["Jupiter","Earth", "Mars", "Sun","pluto"];
-    var secondOptions = ["Dwarf Galaxies","Elliptical Galaxies","Irregular Galaxy","Quasars","Seyfert Galaxies"];
-    var thirdOptions = ["jupiter","Mars","Saturn","Uranus","pluto"];
-    var fourthOptions = ["orion","Hydra","Ursamajor","Hercules","cetus"];
-    var fifthOptions =["Gene Cernan", "Frank Borman","Fred Haise","Georgy Dobrovolsky","Patsayev"];
+    var firstOptions = ["Jupiter","Earth", "Mars", "Sun",];
+    var secondOptions = ["Dwarf Galaxies","Elliptical Galaxies","Irregular Galaxy","Quasars"];
+    var thirdOptions = ["jupiter","Mars","Saturn","Uranus",];
+    var fourthOptions = ["orion","Hydra","Ursamajor","Hercules"];
+    var fifthOptions =["Gene Cernan", "Frank Borman","Fred Haise","Georgy Dobrovolsky"];
+    var sixthOptions =["One million", "4 millions","5 million","10 million"];
+
     
-    var allAnswers = [firstOptions, secondOptions, thirdOptions , fourthOptions,fifthOptions]; 
+    var allAnswers = [firstOptions, secondOptions, thirdOptions , fourthOptions,fifthOptions,sixthOptions]; 
 
     // display first question
     displayQuestion(allQuestions[questionIndex], allAnswers[questionIndex]);
 
-    // function displayQuestion have arguments 
-    //questionNumber gets value from questionIndex i.e 0 ,options are firstOptions.
+    // function that displays questions
     function displayQuestion(question, options) {
         questions.textContent = "";
 
@@ -69,7 +66,7 @@ function startGame() {
         section.append(headerOne);
         section.append(ulList);
 
-        for(i=0;i<5;i++)
+        for(i=0;i<4;i++)
         {
             var li = document.createElement("li");
             var button = document.createElement("button");
@@ -89,7 +86,7 @@ function startGame() {
     }
 
     function rightOption() {
-        container.textContent = "right answer";
+        container.textContent = "right answer!";
         score++;
         scoreDiv.textContent = "Your score is " + score;
         questionIndex++;
@@ -97,26 +94,26 @@ function startGame() {
     }
 
     function wrongOption() {
-        container.textContent = "wrong answer. Thu nee bathuku maada, idhi koda thelidha."
+        container.textContent = "wrong answer..."
         questionIndex++;
         startTime = startTime - 5;
         endGame();
     }
 
     function endGame() {
-        if (questionIndex === 5) {
+        if (questionIndex === allQuestions.length) {
             var remainingTime = startTime;
             container.textContent = "You had " + remainingTime + " seconds left.";
             startTime = 0;
 
             var initials = window.prompt(" You scored " + score + "! What are your initials?" );
-            // show input for
+
             localStorage.setItem(initials, score);
-            scoreDiv.textContent = "hey " +initials+ " Your score is " + score;
+            scoreDiv.textContent = "hey " +initials+ ". Your score is " + score;
             questions.textContent = "";
 
         } else {
-            displayQuestion(allQuestions[questionIndex], allAnswers[questionIndex]);// entres the values as increased on click.
+            displayQuestion(allQuestions[questionIndex], allAnswers[questionIndex]);
         }
     }
 
