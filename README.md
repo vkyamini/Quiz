@@ -2,7 +2,7 @@
 
 Eveyone Loves Quiz, This ia a fun front-end WebApp for a Quiz Game.
 
-[Link](https://vkyamini.github.io/Quiz/) 
+[Wbsite Link](https://vkyamini.github.io/Quiz/) 
 
 ## Table of Contents
 - [Introduction](#introduction)
